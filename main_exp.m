@@ -48,13 +48,6 @@ for i = 1:length(files)
             X_gsp_app(:,:,k) = blockproc(X_gsp(:,:,k), [N, N], fun);
             X_klt_app(:,:,k) = blockproc(X_klt(:,:,k), [N, N], fun);
             X_sot_app(:,:,k) = blockproc(X_sot(:,:,k), [N, N], fun);
-%             % Anti-Transform
-%             fun = @(block_struct) inv_T(block_struct.data, U(:,:,k)');
-%             X_gsp(:,:,k) = blockproc(img, [N, N], fun);
-%             fun = @(block_struct) inv_T(block_struct.data, K(:,:,k)');
-%             X_klt(:,:,k) = blockproc(img, [N, N], fun);
-%             fun = @(block_struct) inv_T(block_struct.data, S(:,:,k)');
-%             X_sot(:,:,k) = blockproc(img, [N, N], fun);
             % MSE
             fun = @(bs) immse(bs.data,...
                 X_gsp_app(bs.location(1):bs.location(1)+N-1, bs.location(2):bs.location(2)+N-1,k));
@@ -95,9 +88,4 @@ function y = nonLinApp(x, num_coef)
     [~, iM] = sort(abs(x(:)), 'descend');
     y = zeros(size(x));
     y(iM(1:num_coef)) = x(iM(1:num_coef));
-end
-
-function y = inv_T(x, D)
-    N = 8;
-    y = reshape(D\x(:), [N, N]);
 end
