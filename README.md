@@ -25,7 +25,7 @@ The SD and HD clusters are located in the folders Clusters and ClustersHD, while
 
 Folder In includes the eigenvectors of the SBGFTs, KLTs and SOTs in their corresponding files .mat.
 
-Note that the KLTs can be re-generated running the script generateKLT.m (see below), as well as the SOTs finding the code in the folder generateSOT.
+Note that the KLTs can be re-generated running the script generateKLT.m (see below), as well as the SOTs with the code located in the folder generateSOT.
 
 Files
 --------------------
