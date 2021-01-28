@@ -8,7 +8,7 @@ num_coef = 1:10;
 load('In/U8.mat') % Load U
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 load('Indices.mat','indici')
-quante = 20;
+numb = 20;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 psnr_sbgft = zeros(length(files), length(num_coef));
@@ -33,9 +33,9 @@ for i = 1:length(files)
         
         true_ind = indici(:,j);
         
-        X_gsp_app = zeros(size(img,1), size(img,2),quante);
-        mse_gsp = zeros(size(img,1)/N, size(img,2)/N,quante);
-        for k = 1:quante
+        X_gsp_app = zeros(size(img,1), size(img,2),numb);
+        mse_gsp = zeros(size(img,1)/N, size(img,2)/N,numb);
+        for k = 1:numb
             % Non-linear approximation
             fun = @(block_struct) nonLinApp(block_struct.data, num_coef(j));
             X_gsp_app(:,:,k) = blockproc(X_gsp(:,:,true_ind(k)), [N, N], fun);
@@ -50,7 +50,7 @@ for i = 1:length(files)
     end    
 end
 
-save(strcat('psnr_natural_images_', num2str(quante),'.mat'), 'psnr_sbgft')
+save(strcat('psnr_natural_images_', num2str(numb),'.mat'), 'psnr_sbgft')
 
 %%%%%%%%%%%%%%%%%%%%%%%%% FUNCTIONS %%%%%%%%%%%%%%%%%%%%%%%%%
 function y = T(x, D)
