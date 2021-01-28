@@ -1,6 +1,6 @@
 TITLE
 --------------------
-{Symmetry-based Graph fourier transforms: are they optimal for image compression?
+Symmetry-based Graph fourier transforms: are they optimal for image compression?
 
 
 BRIEF DESCRIPTION OF THE PROJECT
