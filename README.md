@@ -23,6 +23,7 @@ Folders Centroids and CentroidsHD collect the files .mat containing the centroid
 The SD and HD clusters are located in the folders Clusters and ClustersHD, while their corresponding covariance matrices are in CovMat and CovMatHD.
 Folder In includes the eigenvectors of the SBGFTs, KLTs and SOTs in their corresponding files .mat.
 Note that the KLTs can be re-generated running the script generateKLT.m (see below), as well as the SOTs finding the code in the folder generateSOT.
+
 Files
 --------------------
 main_exp.m performs the comparison between SBGFTs, KLTs and SOTs.
