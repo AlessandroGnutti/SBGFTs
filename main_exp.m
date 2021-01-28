@@ -2,7 +2,8 @@ clear
 close all
 clc
 
-files = dir(fullfile('Database/database/', '*.jpg'));
+strg_database = 'Database/database/';
+files = dir(fullfile(strg_database, '*.jpg'));
 N = 8;
 num_coef = 1:10;
 load('In/U8.mat') % Load U
@@ -12,10 +13,10 @@ load('In/S8.mat') % Load S
 psnr_sbgft = zeros(length(files), length(num_coef));
 psnr_klt = zeros(length(files), length(num_coef));
 psnr_sot = zeros(length(files), length(num_coef));
-for i = 1:1%length(files)
+for i = 1:length(files)
     strg = files(i).name;
     disp(strg)
-    img = imread(strcat('Database/database/', strg));
+    img = imread(strcat(strg_database, strg));
     if length(size(img))==3
         img = rgb2gray(img);
     end
@@ -35,7 +36,6 @@ for i = 1:1%length(files)
     end
     
     for j = 1:length(num_coef)
-        j
         X_gsp_app = zeros(size(img,1), size(img,2),40);
         X_klt_app = zeros(size(img,1), size(img,2),40);
         X_sot_app = zeros(size(img,1), size(img,2),40);
