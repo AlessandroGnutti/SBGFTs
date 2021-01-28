@@ -31,7 +31,7 @@ Files
 --------------------
 main_exp.m performs the comparison between SBGFTs, KLTs and SOTs.
 
-main_exp_xx.m calculates the performance of the SBGFTs set with cardinality xx.
+main_exp_x.m calculates the performance of the SBGFTs set with cardinality x. You can set the internal variable 'numb' to x, with x in [1,40].
 
 main_exp_cardinality_reduction.m calculates the histogram of the SBGFTs. The resulting graph indices rank can be found in Indices.mat.
 
