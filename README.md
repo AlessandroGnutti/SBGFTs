@@ -39,6 +39,22 @@ generateKLT.m generates the KLTs associated to the covariance matrices.
 
 The clustering process is performed in Python by the function sklearn.cluster.KMeans().
 
+## Citation
+
+If you use this code in your work, please consider citing the following paper:
+
+```
+@INPROCEEDINGS{9506636,
+  author={Gnutti, Alessandro and Guerrini, Fabrizio and Leonardi, Riccardo and Ortega, Antonio},
+  booktitle={2021 IEEE International Conference on Image Processing (ICIP)}, 
+  title={Symmetry-Based Graph Fourier Transforms: Are They Optimal For Image Compression?}, 
+  year={2021},
+  volume={},
+  number={},
+  pages={1594-1598},
+  keywords={Image coding;Fourier transforms;Conferences;Clustering algorithms;Transforms;Approximation algorithms;Compaction;Graph Fourier Transforms;symmetric graphs;multiple transforms coding;image non-linear approximation},
+  doi={10.1109/ICIP42928.2021.9506636}}
+```
 
 SUPPORT
 --------------------
